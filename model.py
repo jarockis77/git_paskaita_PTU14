@@ -11,6 +11,13 @@ class User(Base):
     name = Column(String)
     email = Column(String)
 
+class Product(Base):
+    __tablename__ = 'product'
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    price = Column(Integer)
+
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
+
