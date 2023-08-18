@@ -16,6 +16,7 @@ class Product(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String)
     price = Column(Integer)
+    user_id = Column(Integer, ForeignKey('user.id'))
 
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
